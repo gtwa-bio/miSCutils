@@ -9,6 +9,10 @@
 issues](https://img.shields.io/github/issues/gtwa-bio/miSCutils)](https://github.com/gtwa-bio/miSCutils/issues)
 [![GitHub
 pulls](https://img.shields.io/github/issues-pr/gtwa-bio/miSCutils)](https://github.com/gtwa-bio/miSCutils/pulls)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![Codecov test
+coverage](https://codecov.io/gh/gtwa-bio/miSCutils/graph/badge.svg)](https://app.codecov.io/gh/gtwa-bio/miSCutils)
 <!-- badges: end -->
 
 The goal of `miSCutils` is to collect the miscellaneous functions that

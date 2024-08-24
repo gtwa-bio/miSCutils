@@ -1,0 +1,18 @@
+pkgVer <- function(pkg) {
+    if (!exists("meta") || is.null(meta)) meta <- packageDescription(pkg)
+    ver <- meta$Version
+    paste0('https://github.com/gtwa-bio/miSCutils/', pkg, ' - R package version ', ver)
+}
+
+c(
+
+    bibentry(bibtype="manual",
+        title = "miSCutils",
+        author = personList(
+            as.person("gtwa-bio")
+        ),
+        year = format(Sys.Date(), "%Y"),
+        url = "https://github.com/gtwa-bio/miSCutils",
+        note = pkgVer('miSCutils')
+    )
+)
