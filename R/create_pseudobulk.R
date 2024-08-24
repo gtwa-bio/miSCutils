@@ -16,37 +16,43 @@
 #' @export
 #'
 #' @examples
-#' create_pseudobulk(seurat_obj = Neurons,
-#'   cell_type_var = "CellType",
-#'   grouping_vars = c("Sex","GEM"),
-#'   split = TRUE)
+#' create_pseudobulk(
+#'     seurat_obj = Neurons,
+#'     cell_type_var = "CellType",
+#'     grouping_vars = c("Sex", "GEM"),
+#'     split = TRUE
+#' )
+create_pseudobulk <- function(seurat_obj, cell_type_var, grouping_vars, split = FALSE) {
+    cts <- AggregateExpression(
+        object = seurat_obj,
+        assays = "RNA",
+        slot = "counts",
+        group.by = c(cell_type_var, grouping_vars),
+        return.seurat = FALSE
+    )$RNA %>%
+        t() %>%
+        data.frame()
 
-create_pseudobulk <- function(seurat_obj, cell_type_var, grouping_vars, split = FALSE){
-  cts <- AggregateExpression(object = seurat_obj,
-                             assays = "RNA",
-                             slot = "counts",
-                             group.by = c(cell_type_var, grouping_vars),
-                             return.seurat = FALSE)$RNA %>%
-    t() %>%
-    data.frame()
+    if (split == TRUE) {
+        # split by cell type
+        splitRows <- gsub("_.*", "", rownames(cts))
+        cts.split <- split.data.frame(cts,
+            f = factor(splitRows)
+        )
 
-  if(split == TRUE){
-    # split by cell type
-    splitRows <- gsub('_.*','',rownames(cts))
-    cts.split <- split.data.frame(cts,
-                                  f = factor(splitRows))
+        # clip cell type from sample name, and return to gene x sample orientation
+        cts.split.modified <- lapply(cts.split, function(x) {
+            rownames(x) <- gsub("^([^_]*_){2}", "\\1", rownames(x))
+            rownames(x) <- gsub("-", "_", rownames(x))
+            x <- t(x) %>% data.frame()
+            return(x)
+        })
 
-    # clip cell type from sample name, and return to gene x sample orientation
-    cts.split.modified <- lapply(cts.split, function(x){
-      rownames(x) <- gsub("^([^_]*_){2}", '\\1', rownames(x))
-      rownames(x) <- gsub("-", "_", rownames(x))
-      x <- t(x) %>% data.frame()
-      return(x)
-    })
+        return(cts.split.modified)
+    }
 
-    return(cts.split.modified)
-  }
-
-  cts <- cts %>% t() %>% data.frame()
-  return(cts)
+    cts <- cts %>%
+        t() %>%
+        data.frame()
+    return(cts)
 }
