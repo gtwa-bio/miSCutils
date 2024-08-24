@@ -28,7 +28,8 @@ The goal of `miSCutils` is to collect the miscellaneous functions that tend to g
 
 Get the latest stable `R` release from [CRAN](http://cran.r-project.org/). Then install `miSCutils` from [GitHub](https://github.com/gtwa-bio/PMIDlotteRy) with:
 
-```{r 'install_dev', eval = FALSE}
+```{r 'install', eval = FALSE}
+# Requires devtools
 install.packages("devtools")
 devtools::install_github("gtwa-bio/PMIDlotteRy")
 ```

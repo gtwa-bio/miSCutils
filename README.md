@@ -30,6 +30,7 @@ Get the latest stable `R` release from
 [GitHub](https://github.com/gtwa-bio/PMIDlotteRy) with:
 
 ``` r
+# Requires devtools
 install.packages("devtools")
 devtools::install_github("gtwa-bio/PMIDlotteRy")
 ```
