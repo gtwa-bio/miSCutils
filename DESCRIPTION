@@ -1,6 +1,6 @@
 Package: miSCutils
 Title: Miscelaneous Single-Cell Utilities
-Version: 0.0.0.9000
+Version: 0.0.1
 Date: 2024-08-24
 Authors@R: 
     person("Guy", "Twa", , "gtwa@uab.edu", role = c("aut", "cre"),
