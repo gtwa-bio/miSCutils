@@ -1,7 +1,7 @@
 #' Get DESeq Results
 #'
-#' @param seurat_obj Seurat object
 #' @param DESeq_obj DESeq object
+#' @param seurat_obj Seurat object
 #' @param Contrast Chr vector of contrast in the format c("variable", "level1", "level2")
 #'
 #' @import dplyr
@@ -20,7 +20,7 @@
 #'     Contrast = c("Treatment", "Mor", "Sal")
 #' )
 #'
-results_DESeq <- function(seurat_obj, DESeq_obj, Contrast) {
+results_DESeq <- function(DESeq_obj, seurat_obj, Contrast) {
     # Extract results
     res <- results(DESeq_obj, contrast = Contrast) %>%
         data.frame() %>%
