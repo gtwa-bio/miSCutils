@@ -21,32 +21,36 @@
 #'     pseudobulk_counts = counts.list,
 #'     pseudobulk_metadata = metadata.list,
 #'     counts_filter = 5,
-#'     Design = ~ Treatment,
+#'     Design = ~Treatment,
 #'     split = TRUE
 #' )
 #'
-create_DESeq <- function(pseudobulk_counts, pseudobulk_metadata, counts_filter, Design, split = FALSE){
-  if(split == TRUE){
-    # Make DESeq object for each cell type
-    dds <- lapply(names(pseudobulk_counts), function(celltype){
-      celltype.dds <- DESeqDataSetFromMatrix(countData = pseudobulk_counts[[celltype]],
-                                             colData = pseudobulk_metadata[[celltype]],
-                                             design = Design)
-      # Filter low count genes
-      keep <- rowSums(counts(celltype.dds)) >= counts_filter
-      celltype.dds <- celltype.dds[keep,]
-      # return cell type dds object
-      return(celltype.dds)
-    })
-  } else {
-    # Make DESeq object
-    dds <- DESeqDataSetFromMatrix(countData = pseudobulk_counts,
-                                  colData = pseudobulk_metadata,
-                                  design = Design)
-    # Filter low count genes
-    keep <- rowSums(counts(dds)) >= counts_filter
-    dds <- dds[keep,]
-  }
-  # Return final object
-  return(dds)
+create_DESeq <- function(pseudobulk_counts, pseudobulk_metadata, counts_filter, Design, split = FALSE) {
+    if (split == TRUE) {
+        # Make DESeq object for each cell type
+        dds <- lapply(names(pseudobulk_counts), function(celltype) {
+            celltype.dds <- DESeqDataSetFromMatrix(
+                countData = pseudobulk_counts[[celltype]],
+                colData = pseudobulk_metadata[[celltype]],
+                design = Design
+            )
+            # Filter low count genes
+            keep <- rowSums(counts(celltype.dds)) >= counts_filter
+            celltype.dds <- celltype.dds[keep, ]
+            # return cell type dds object
+            return(celltype.dds)
+        })
+    } else {
+        # Make DESeq object
+        dds <- DESeqDataSetFromMatrix(
+            countData = pseudobulk_counts,
+            colData = pseudobulk_metadata,
+            design = Design
+        )
+        # Filter low count genes
+        keep <- rowSums(counts(dds)) >= counts_filter
+        dds <- dds[keep, ]
+    }
+    # Return final object
+    return(dds)
 }
