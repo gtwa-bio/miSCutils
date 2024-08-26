@@ -4,12 +4,12 @@
 \alias{results_DESeq}
 \title{Get DESeq Results}
 \usage{
-results_DESeq(seurat_obj, DESeq_obj, Contrast)
+results_DESeq(DESeq_obj, seurat_obj, Contrast)
 }
 \arguments{
-\item{seurat_obj}{Seurat object}
-
 \item{DESeq_obj}{DESeq object}
+
+\item{seurat_obj}{Seurat object}
 
 \item{Contrast}{Chr vector of contrast in the format c("variable", "level1", "level2")}
 }
