@@ -13,7 +13,7 @@
 #' @import tibble
 #' @import magrittr
 #'
-#' @return
+#' @return Data frame, list of data frames if `split == TRUE`
 #' @export
 #'
 #' @examples
