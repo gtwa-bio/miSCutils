@@ -32,7 +32,7 @@ Get the latest stable `R` release from
 ``` r
 # Requires devtools
 install.packages("devtools")
-devtools::install_github("gtwa-bio/PMIDlotteRy")
+devtools::install_github("gtwa-bio/miSCutils")
 ```
 
 ## Example

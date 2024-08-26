@@ -31,7 +31,7 @@ Get the latest stable `R` release from [CRAN](http://cran.r-project.org/). Then 
 ```{r 'install', eval = FALSE}
 # Requires devtools
 install.packages("devtools")
-devtools::install_github("gtwa-bio/PMIDlotteRy")
+devtools::install_github("gtwa-bio/miSCutils")
 ```
 
 
