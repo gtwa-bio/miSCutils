@@ -29,47 +29,55 @@
 #'     seurat_obj = Neurons,
 #'     cell_type_var = "CellType",
 #'     grouping_vars = c("Sex", "GEM"),
-#'     Design = ~Treatment
+#'     Design = ~Treatment,
 #'     Contrast = c("Treatment", "Mor", "Sal")
 #' )
 within_celltype_DEG <- function(seurat_obj,
-                                 cell_type_var,
-                                 grouping_vars,
-                                 counts_filter = 5,
-                                 Design,
-                                 Contrast,
-                                 ...){
+    cell_type_var,
+    grouping_vars,
+    counts_filter = 5,
+    Design,
+    Contrast,
+    ...) {
+    # Create pseudobulk count data
+    cts <- create_pseudobulk(
+        seurat_obj = seurat_obj,
+        cell_type_var = cell_type_var,
+        grouping_vars = grouping_vars,
+        split = TRUE
+    )
 
-  # Create pseudobulk count data
-  cts <- create_pseudobulk(seurat_obj = seurat_obj,
-                           cell_type_var = cell_type_var,
-                           grouping_vars = grouping_vars,
-                           split = TRUE)
+    # Create pseudobulk metadata
+    metadata <- create_metadata(
+        seurat_obj = seurat_obj,
+        sample_id_vars = grouping_vars,
+        metadata_vars = all.vars(Design),
+        cell_type_var = cell_type_var,
+        split = TRUE
+    )
 
-  # Create pseudobulk metadata
-  metadata <- create_metadata(seurat_obj = seurat_obj,
-                              sample_id_vars = grouping_vars,
-                              metadata_vars = all.vars(Design),
-                              cell_type_var = cell_type_var,
-                              split = TRUE)
+    # Create DESeq object
+    DESeq_list <- create_DESeq(
+        pseudobulk_counts = cts,
+        pseudobulk_metadata = metadata,
+        counts_filter = counts_filter,
+        Design = Design,
+        split = TRUE
+    )
 
-  # Create DESeq object
-  DESeq_list <- create_DESeq(pseudobulk_counts = cts,
-                             pseudobulk_metadata = metadata,
-                             counts_filter = counts_filter,
-                             Design = Design,
-                             split = TRUE)
+    # Fit DESeq object with model
+    DESeq_list <- map(
+        DESeq_list,
+        DESeq,
+        ...
+    )
 
-  # Fit DESeq object with model
-  DESeq_list <- map(DESeq_list,
-                    DESeq,
-                    ...)
+    # Extract DEG results
+    res <- map(DESeq_list, results_DESeq,
+        seurat_obj = seurat_obj,
+        Contrast = Contrast
+    )
 
-  # Extract DEG results
-  res <- map(DESeq_list, results_DESeq,
-             seurat_obj = seurat_obj,
-             Contrast = Contrast)
-
-  # Return results
-  return(res)
+    # Return results
+    return(res)
 }
