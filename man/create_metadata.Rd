@@ -23,6 +23,9 @@ create_metadata(
 
 \item{split}{Lgl weather or not metadata table should be split by cell type}
 }
+\value{
+Data frame, list of data frames if \code{split == TRUE}
+}
 \description{
 Create Pseudo-bulked metadata table
 }
