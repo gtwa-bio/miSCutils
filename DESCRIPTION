@@ -13,6 +13,14 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 URL: https://github.com/gtwa-bio/miSCutils
 BugReports: https://github.com/gtwa-bio/miSCutils/issues
+Imports:
+    Seurat,
+    SeuratObject,
+    dplyr,
+    tidyr,
+    tibble,
+    magrittr,
+    DESeq2
 Suggests: 
     BiocStyle,
     knitr,
