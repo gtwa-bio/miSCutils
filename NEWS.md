@@ -1,3 +1,19 @@
+# miSCutils 0.0.2
+
+NEW FEATURES
+
+* Added `within_celltype_DEG()` function to wrap other pseudo-bulk functions for
+  within cell type DEG testing with DESeq2.
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+* new functions!
+* `results_DESeq()` order go seurat obejct and DESeq object swapped
+
+BUG FIXES
+
+* Can't have bugs if nobody's used the package yet!
+
 # miSCutils 0.0.1
 
 NEW FEATURES
