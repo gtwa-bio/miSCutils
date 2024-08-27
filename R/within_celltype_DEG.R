@@ -26,13 +26,13 @@
 #' @export
 #'
 #' @examples
-#' within_celltype_DEG(
-#'     seurat_obj = Neurons,
-#'     cell_type_var = "CellType",
-#'     grouping_vars = c("Sex", "GEM"),
-#'     Design = ~Treatment,
-#'     Contrast = c("Treatment", "Mor", "Sal")
-#' )
+#' # within_celltype_DEG(
+#' #   seurat_obj = Neurons,
+#' #   cell_type_var = "CellType",
+#' #   grouping_vars = c("Sex", "GEM"),
+#' #   Design = ~Treatment,
+#' #   Contrast = c("Treatment", "Mor", "Sal")
+#' # )
 within_celltype_DEG <- function(seurat_obj,
     cell_type_var,
     grouping_vars,

@@ -41,11 +41,11 @@ If running this analysis for the first time, we'd recommend running each step
 interactively so that you can inspect the model fit quality.
 }
 \examples{
-within_celltype_DEG(
-    seurat_obj = Neurons,
-    cell_type_var = "CellType",
-    grouping_vars = c("Sex", "GEM"),
-    Design = ~Treatment,
-    Contrast = c("Treatment", "Mor", "Sal")
-)
+# within_celltype_DEG(
+#   seurat_obj = Neurons,
+#   cell_type_var = "CellType",
+#   grouping_vars = c("Sex", "GEM"),
+#   Design = ~Treatment,
+#   Contrast = c("Treatment", "Mor", "Sal")
+# )
 }

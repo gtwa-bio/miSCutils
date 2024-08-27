@@ -20,10 +20,10 @@ Data frame of DESeq results
 Get DESeq Results
 }
 \examples{
-results_DESeq(
-    seurat_obj = Pain_neurons,
-    DESeq_obj = DESeq_obj,
-    Contrast = c("Treatment", "Mor", "Sal")
-)
+# results_DESeq(
+#   seurat_obj = Neurons,
+#   DESeq_obj = DESeq_obj,
+#   Contrast = c("Treatment", "Mor", "Sal")
+# )
 
 }

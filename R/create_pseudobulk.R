@@ -14,12 +14,12 @@
 #' @export
 #'
 #' @examples
-#' create_pseudobulk(
-#'     seurat_obj = Neurons,
-#'     cell_type_var = "CellType",
-#'     grouping_vars = c("Sex", "GEM"),
-#'     split = TRUE
-#' )
+#' # create_pseudobulk(
+#' #   seurat_obj = Neurons,
+#' #   cell_type_var = "CellType",
+#' #   grouping_vars = c("Sex", "GEM"),
+#' #   split = TRUE
+#' # )
 create_pseudobulk <- function(seurat_obj, cell_type_var, grouping_vars, split = FALSE) {
     cts <- AggregateExpression(
         object = seurat_obj,

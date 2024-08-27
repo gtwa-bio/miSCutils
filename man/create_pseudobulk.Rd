@@ -22,10 +22,10 @@ Data frame, or list of data frames if \code{split == TRUE}
 Create Pseudo-bulked Assay data
 }
 \examples{
-create_pseudobulk(
-    seurat_obj = Neurons,
-    cell_type_var = "CellType",
-    grouping_vars = c("Sex", "GEM"),
-    split = TRUE
-)
+# create_pseudobulk(
+#   seurat_obj = Neurons,
+#   cell_type_var = "CellType",
+#   grouping_vars = c("Sex", "GEM"),
+#   split = TRUE
+# )
 }

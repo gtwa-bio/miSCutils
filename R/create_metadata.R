@@ -15,13 +15,13 @@
 #' @export
 #'
 #' @examples
-#' create_metadata(
-#'     seurat_obj = Neurons,
-#'     sample_id_vars = c("Sex", "GEM"),
-#'     metadata_vars = c("Sex", "GEM", "Treatment"),
-#'     cell_type_var = "CellType",
-#'     split = TRUE
-#' )
+#' # create_metadata(
+#' #    seurat_obj = Neurons,
+#' #   sample_id_vars = c("Sex", "GEM"),
+#' #   metadata_vars = c("Sex", "GEM", "Treatment"),
+#' #   cell_type_var = "CellType",
+#' #   split = TRUE
+#' # )
 #'
 create_metadata <- function(seurat_obj, sample_id_vars, metadata_vars, cell_type_var, split = FALSE) {
     # Extract metadata from the Seurat object

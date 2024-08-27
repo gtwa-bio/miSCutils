@@ -16,13 +16,13 @@
 #' @export
 #'
 #' @examples
-#' create_DESeq(
-#'     pseudobulk_counts = counts.list,
-#'     pseudobulk_metadata = metadata.list,
-#'     counts_filter = 5,
-#'     Design = ~Treatment,
-#'     split = TRUE
-#' )
+#' # create_DESeq(
+#' #     pseudobulk_counts = counts.list,
+#' #   pseudobulk_metadata = metadata.list,
+#' #   counts_filter = 5,
+#' #   Design = ~Treatment,
+#' #   split = TRUE
+#' # )
 #'
 create_DESeq <- function(pseudobulk_counts, pseudobulk_metadata, counts_filter, Design, split = FALSE) {
     if (split == TRUE) {

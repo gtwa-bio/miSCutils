@@ -30,12 +30,12 @@ Data frame, list of data frames if \code{split == TRUE}
 Create Pseudo-bulked metadata table
 }
 \examples{
-create_metadata(
-    seurat_obj = Neurons,
-    sample_id_vars = c("Sex", "GEM"),
-    metadata_vars = c("Sex", "GEM", "Treatment"),
-    cell_type_var = "CellType",
-    split = TRUE
-)
+# create_metadata(
+#    seurat_obj = Neurons,
+#   sample_id_vars = c("Sex", "GEM"),
+#   metadata_vars = c("Sex", "GEM", "Treatment"),
+#   cell_type_var = "CellType",
+#   split = TRUE
+# )
 
 }

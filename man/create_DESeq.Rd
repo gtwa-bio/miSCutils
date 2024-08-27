@@ -30,12 +30,12 @@ DESeq object, or list of DESeq objects if \code{split == TRUE}
 Create DESeq object or list of DESeq objects
 }
 \examples{
-create_DESeq(
-    pseudobulk_counts = counts.list,
-    pseudobulk_metadata = metadata.list,
-    counts_filter = 5,
-    Design = ~Treatment,
-    split = TRUE
-)
+# create_DESeq(
+#     pseudobulk_counts = counts.list,
+#   pseudobulk_metadata = metadata.list,
+#   counts_filter = 5,
+#   Design = ~Treatment,
+#   split = TRUE
+# )
 
 }
