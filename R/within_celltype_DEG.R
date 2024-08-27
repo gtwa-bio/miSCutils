@@ -10,7 +10,7 @@
 #' @param grouping_vars Chr vector of metadata variables that define cell grouping strategy
 #' @param counts_filter Int minimum count to retain gene
 #' @param Design Formula for model to fit
-#' @param Contrast Chr vector of contrast in the format c("variable", "level1", "level2")
+#' @param Contrast Chr vector of contrast in the format c("variable", "level2", "level1")
 #' @param ... Additional arguments to pass to DESeq2
 #'
 #' @import Seurat
