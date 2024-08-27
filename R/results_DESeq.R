@@ -7,7 +7,6 @@
 #' @import dplyr
 #' @import tidyr
 #' @import tibble
-#' @import magrittr
 #' @import DESeq2
 #'
 #' @return Data frame of DESeq results

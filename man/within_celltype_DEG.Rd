@@ -25,7 +25,7 @@ within_celltype_DEG(
 
 \item{Design}{Formula for model to fit}
 
-\item{Contrast}{Chr vector of contrast in the format c("variable", "level1", "level2")}
+\item{Contrast}{Chr vector of contrast in the format c("variable", "level2", "level1")}
 
 \item{...}{Additional arguments to pass to DESeq2}
 }

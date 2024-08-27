@@ -9,7 +9,6 @@
 #' @import dplyr
 #' @import tidyr
 #' @import tibble
-#' @import magrittr
 #' @import DESeq2
 #'
 #'

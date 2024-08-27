@@ -10,7 +10,6 @@
 #' @import dplyr
 #' @import tidyr
 #' @import tibble
-#' @import magrittr
 #'
 #' @return Data frame, or list of data frames if `split == TRUE`
 #' @export

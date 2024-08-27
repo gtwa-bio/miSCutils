@@ -11,7 +11,6 @@
 #' @import dplyr
 #' @import tidyr
 #' @import tibble
-#' @import magrittr
 #'
 #' @return Data frame, list of data frames if `split == TRUE`
 #' @export
