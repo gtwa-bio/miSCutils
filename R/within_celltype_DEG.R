@@ -4,6 +4,8 @@
 #' gene expression testing within cell types using DESeq2. For a more modular
 #' and interactive workflow, see the individual `create_pseudobulk()`,
 #' `create_metadata()`, `create_DESeq()`, `DESeq()`, and `results_DESeq()` functions.
+#' If running this analysis for the first time, we'd recommend running each step
+#' interactively so that you can inspect the model fit quality.
 #'
 #' @param seurat_obj Seurat object
 #' @param cell_type_var Chr name of metadata variable containing cell type annotation
