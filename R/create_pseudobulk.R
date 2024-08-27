@@ -6,7 +6,6 @@
 #' @param split Lgl whether or not to split pseudo-bulk matrix by cell type
 #'
 #' @import Seurat
-#' @import SeuratObject
 #' @import dplyr
 #' @import tidyr
 #' @import tibble

@@ -4,6 +4,7 @@
 #' @param seurat_obj Seurat object
 #' @param Contrast Chr vector of contrast in the format c("variable", "level1", "level2")
 #'
+#' @import Seurat
 #' @import dplyr
 #' @import tidyr
 #' @import tibble

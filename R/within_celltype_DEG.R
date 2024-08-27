@@ -21,6 +21,7 @@
 #' @import tidyr
 #' @import tibble
 #' @import DESeq2
+#' @import purrr
 #'
 #' @return Data frame of DESeq results
 #' @export

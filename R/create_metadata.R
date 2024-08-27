@@ -7,7 +7,6 @@
 #' @param split Lgl weather or not metadata table should be split by cell type
 #'
 #' @import Seurat
-#' @import SeuratObject
 #' @import dplyr
 #' @import tidyr
 #' @import tibble
