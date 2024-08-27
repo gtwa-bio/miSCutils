@@ -16,7 +16,6 @@
 #' @param ... Additional arguments to pass to DESeq2
 #'
 #' @import Seurat
-#' @import SeuratObject
 #' @import dplyr
 #' @import tidyr
 #' @import tibble

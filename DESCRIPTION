@@ -20,7 +20,8 @@ Imports:
     tidyr,
     tibble,
     magrittr,
-    DESeq2
+    DESeq2,
+    purrr
 Suggests: 
     BiocStyle,
     knitr,
