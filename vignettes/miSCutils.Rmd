@@ -58,12 +58,12 @@ bib <- c(
 ```{r "install", eval = FALSE}
 install.packages("devtools")
 
-devtools::install_github("gtwa-bio/PMIDlotteRy")
+devtools::install_github("gtwa-bio/miSCutils")
 ```
 
 ## Required knowledge
 
-`r Biocpkg("miSCutils")` is based on many other packages and in particular in those that have implemented the infrastructure needed for dealing with single-cell/single-nuclei RNA-seq and ATAC data. That is, packages like `r Biocpkg("Seurat")` and `r Biocpkg("DESeq2")`.
+`r Biocpkg("miSCutils")` is based on many other packages and in particular in those that have implemented the infrastructure needed for dealing with single-cell/single-nuclei RNA-seq and ATAC data. That is, packages like `r CRANpkg("Seurat")` `r Citep(bib[["Seurat"]])` and `r Biocpkg("DESeq2")` `r Citep(bib[["DESeq2"]])`.
 
 ## Asking for help
 
@@ -71,7 +71,7 @@ As package developers, we try to explain clearly how to use our packages and in 
 
 ## Citing `miSCutils`
 
-We hope that `r Biocpkg("miSCutils")` will be useful for your research. Please use the following information to cite the package and the overall approach. Thank you!
+We hope that `r Biocpkg("miSCutils")` will be useful for your research. Please use the following information to cite the package. Maybe one day we'll have a real DOI. Thanks!
 
 ```{r "citation"}
 ## Citation info
