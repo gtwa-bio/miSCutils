@@ -37,6 +37,8 @@ This function conducts our standard workflow for pseudo-bulked differential
 gene expression testing within cell types using DESeq2. For a more modular
 and interactive workflow, see the individual \code{create_pseudobulk()},
 \code{create_metadata()}, \code{create_DESeq()}, \code{DESeq()}, and \code{results_DESeq()} functions.
+If running this analysis for the first time, we'd recommend running each step
+interactively so that you can inspect the model fit quality.
 }
 \examples{
 within_celltype_DEG(
