@@ -33,13 +33,14 @@
 #' #   Design = ~Treatment,
 #' #   Contrast = c("Treatment", "Mor", "Sal")
 #' # )
-within_celltype_DEG <- function(seurat_obj,
-    cell_type_var,
-    grouping_vars,
-    counts_filter = 5,
-    Design,
-    Contrast,
-    ...) {
+within_celltype_DEG <- function(
+        seurat_obj,
+        cell_type_var,
+        grouping_vars,
+        counts_filter = 5,
+        Design,
+        Contrast,
+        ...) {
     # Create pseudobulk count data
     cts <- create_pseudobulk(
         seurat_obj = seurat_obj,
