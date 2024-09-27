@@ -16,11 +16,12 @@ BugReports: https://github.com/gtwa-bio/miSCutils/issues
 Imports:
     Seurat,
     SeuratObject,
+    DESeq2,
+    lisi
     dplyr,
     tidyr,
     tibble,
     magrittr,
-    DESeq2,
     purrr
 Suggests: 
     BiocStyle,
@@ -29,5 +30,7 @@ Suggests:
     rmarkdown,
     sessioninfo,
     testthat (>= 3.0.0)
+Remotes: 
+  immunogenomics/LISI
 Config/testthat/edition: 3
 VignetteBuilder: knitr
