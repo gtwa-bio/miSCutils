@@ -4,7 +4,7 @@
 \alias{results_DESeq}
 \title{Get DESeq Results}
 \usage{
-results_DESeq(DESeq_obj, seurat_obj, Contrast)
+results_DESeq(DESeq_obj, seurat_obj, Contrast, cell_type_var, cell_type_level)
 }
 \arguments{
 \item{DESeq_obj}{DESeq object}
