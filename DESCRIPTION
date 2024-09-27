@@ -17,7 +17,7 @@ Imports:
     Seurat,
     SeuratObject,
     DESeq2,
-    lisi
+    lisi,
     dplyr,
     tidyr,
     tibble,
