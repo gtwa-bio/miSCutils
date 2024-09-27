@@ -22,7 +22,11 @@ Imports:
     tidyr,
     tibble,
     magrittr,
-    purrr
+    purrr,
+    RColorBrewer,
+    ggplot2,
+    patchwork,
+    reshape2
 Suggests: 
     BiocStyle,
     knitr,
