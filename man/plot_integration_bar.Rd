@@ -7,8 +7,29 @@
 plot_integration_bar(seurat_obj, cluster_col, treatment_col, gem_col, sex_col)
 }
 \arguments{
-\item{sex_col}{}
+\item{seurat_obj}{Seurat object}
+
+\item{cluster_col}{String. Name of metadata column for cluster annotation}
+
+\item{treatment_col}{String. Name of metadata column for treatment group data}
+
+\item{gem_col}{String. Name of metadata column for GEM well data}
+
+\item{sex_col}{String. Name of metadata column for Sex data}
+}
+\value{
+patchwork plot object
 }
 \description{
-Plot cluster integration as stacked bar plot
+Plots proportion of cells from experimental treatment, sequencing
+GEM well, and sex groups per cluster as a stacked bar plot. Useful for assessment
+of cluster integration. Recommended use in tandem with \code{plot_integration_lisi()}.
+}
+\examples{
+# plot_lisi_clusters(Neurons,
+#                    cluster_col = "CellType",
+#                    treatment_col = "Treatment",
+#                    gem_col = "GEM",
+#                    sex_col = "Sex"
+#                    )
 }

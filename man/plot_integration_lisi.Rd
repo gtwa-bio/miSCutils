@@ -14,8 +14,32 @@ plot_integration_lisi(
 )
 }
 \arguments{
-\item{reduction}{}
+\item{seurat_obj}{Seurat object}
+
+\item{cluster_col}{String. Name of metadata column for cluster annotation}
+
+\item{treatment_col}{String. Name of metadata column for treatment group data}
+
+\item{gem_col}{String. Name of metadata column for GEM well data}
+
+\item{sex_col}{String. Name of metadata column for Sex data}
+
+\item{reduction}{String. Name of dimensional reduction to assesss}
+}
+\value{
+patchwork plot object
 }
 \description{
-Plot cluster integration by LISI as ridge plot
+Plots local inverse simpson index (LISI) of cells from experimental treatment, sequencing
+GEM well, and sex groups per cluster as a ridge plot. Useful for assessment
+of cluster integration. Recommended use in tandem with \code{plot_integration_bar()}.
+}
+\examples{
+# plot_lisi_clusters(Neurons,
+#                    cluster_col = "CellType",
+#                    treatment_col = "Treatment",
+#                    gem_col = "GEM",
+#                    sex_col = "Sex",
+#                    reduction = "PC12UMAP",
+#                    )
 }

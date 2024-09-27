@@ -1,11 +1,15 @@
 #' Plot cluster integration by LISI as ridge plot
 #'
-#' @param seurat_obj
-#' @param cluster_col
-#' @param treatment_col
-#' @param gem_col
-#' @param sex_col
-#' @param reduction
+#' Plots local inverse simpson index (LISI) of cells from experimental treatment, sequencing
+#' GEM well, and sex groups per cluster as a ridge plot. Useful for assessment
+#' of cluster integration. Recommended use in tandem with `plot_integration_bar()`.
+#'
+#' @param seurat_obj Seurat object
+#' @param cluster_col String. Name of metadata column for cluster annotation
+#' @param treatment_col String. Name of metadata column for treatment group data
+#' @param gem_col String. Name of metadata column for GEM well data
+#' @param sex_col String. Name of metadata column for Sex data
+#' @param reduction String. Name of dimensional reduction to assesss
 #'
 #' @import Seurat
 #' @import lisi
@@ -14,10 +18,17 @@
 #' @import reshape2
 #' @import RColorBrewer
 #'
-#' @return
+#' @return patchwork plot object
 #' @export
 #'
 #' @examples
+#' # plot_lisi_clusters(Neurons,
+#' #                    cluster_col = "CellType",
+#' #                    treatment_col = "Treatment",
+#' #                    gem_col = "GEM",
+#' #                    sex_col = "Sex",
+#' #                    reduction = "PC12UMAP",
+#' #                    )
 plot_integration_lisi <- function(seurat_obj, cluster_col, treatment_col, gem_col, sex_col, reduction = "umap") {
     ## take an integrated Seurat object, plot distributions of LISI index for treatment group, GEM well, and predicted sex
 

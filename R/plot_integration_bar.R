@@ -1,10 +1,14 @@
 #' Plot cluster integration as stacked bar plot
 #'
-#' @param seurat_obj
-#' @param cluster_col
-#' @param treatment_col
-#' @param gem_col
-#' @param sex_col
+#' Plots proportion of cells from experimental treatment, sequencing
+#' GEM well, and sex groups per cluster as a stacked bar plot. Useful for assessment
+#' of cluster integration. Recommended use in tandem with `plot_integration_lisi()`.
+#'
+#' @param seurat_obj Seurat object
+#' @param cluster_col String. Name of metadata column for cluster annotation
+#' @param treatment_col String. Name of metadata column for treatment group data
+#' @param gem_col String. Name of metadata column for GEM well data
+#' @param sex_col String. Name of metadata column for Sex data
 #'
 #' @import Seurat
 #' @import patchwork
@@ -12,10 +16,16 @@
 #' @import reshape2
 #' @import RColorBrewer
 #'
-#' @return
+#' @return patchwork plot object
 #' @export
 #'
 #' @examples
+#' # plot_lisi_clusters(Neurons,
+#' #                    cluster_col = "CellType",
+#' #                    treatment_col = "Treatment",
+#' #                    gem_col = "GEM",
+#' #                    sex_col = "Sex"
+#' #                    )
 plot_integration_bar <- function(seurat_obj, cluster_col, treatment_col, gem_col, sex_col) {
     # Treatment Group
     T_count_table <- table(seurat_obj@meta.data[[cluster_col]], seurat_obj@meta.data[[treatment_col]])
