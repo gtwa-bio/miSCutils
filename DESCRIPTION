@@ -27,7 +27,8 @@ Imports:
     ggplot2,
     patchwork,
     reshape2,
-    iSEE
+    iSEE,
+    SingleCellExperiment
 Suggests: 
     BiocStyle,
     knitr,
@@ -39,5 +40,6 @@ Remotes:
   immunogenomics/LISI,
   bioc::DESeq2
   bioc::iSEE
+  bioc::SingleCellExperiment
 Config/testthat/edition: 3
 VignetteBuilder: knitr
