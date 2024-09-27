@@ -38,8 +38,8 @@ Suggests:
     testthat (>= 3.0.0)
 Remotes: 
   immunogenomics/LISI,
-  bioc::DESeq2
-  bioc::iSEE
+  bioc::DESeq2,
+  bioc::iSEE,
   bioc::SingleCellExperiment
 Config/testthat/edition: 3
 VignetteBuilder: knitr
