@@ -31,6 +31,7 @@ Suggests:
     sessioninfo,
     testthat (>= 3.0.0)
 Remotes: 
-  immunogenomics/LISI
+  immunogenomics/LISI,
+  bioc::DESeq2
 Config/testthat/edition: 3
 VignetteBuilder: knitr
